@@ -1,0 +1,12 @@
+Flask
+Flask-CORS
+Flask-SQLAlchemy
+SQLAlchemy
+pandas
+numpy
+openpyxl
+gunicorn
+chardet
+Werkzeug
+psycopg2-binary
+python-dotenv
