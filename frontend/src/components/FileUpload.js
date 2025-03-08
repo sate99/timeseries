@@ -3,7 +3,7 @@ import { Button, Card, CardContent, Typography, Box, Alert, IconButton, Circular
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const FileUpload = ({ handleFileChange, handleUpload, fileInputRef, error, setError, disabled }) => {
+const FileUpload = ({ handleFileChange, handleUpload, handleFileDelete, fileInputRef, error, setError, disabled }) => {
   const [dragOver, setDragOver] = useState(false);
   const [fileName, setFileName] = useState("");
   const [loading, setLoading] = useState(false);
@@ -64,6 +64,7 @@ const FileUpload = ({ handleFileChange, handleUpload, fileInputRef, error, setEr
       fileInputRef.current.value = "";
     }
     setError(null);
+    handleFileDelete(); // Call the handleFileDelete function
   };
 
   return (

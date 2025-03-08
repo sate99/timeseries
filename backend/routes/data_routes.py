@@ -53,7 +53,7 @@ def upload_file():
 @data_bp.route('/api/cleaned-data', methods=['GET'])
 def get_cleaned_data():
     try:
-        result = db.session.execute(text("SELECT * FROM analysis_data"))
+        result = db.session.execute(text("SELECT * FROM cleaned_data"))
         data = [dict(row) for row in result.mappings()]
         return jsonify(data), 200
     except Exception as e:

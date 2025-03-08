@@ -52,6 +52,17 @@ function App() {
     );
   };
 
+  const handleFileDelete = () => {
+    setFile(null);
+    setUploadDisabled(false);
+    setShowCleanedData(false);
+    setShowFilteredData(false);
+    setUploadError(null);
+    setCleanedDataError(null);
+    setAnalysisDataError(null);
+    fileInputRef.current.value = null;
+  };
+
   return (
     <Container style={{ padding: "20px", maxWidth: "800px", margin: "0 auto" }}>
       <Typography variant="h4" gutterBottom>
@@ -71,6 +82,7 @@ function App() {
             )
           }
           handleUpload={handleFileUpload}
+          handleFileDelete={handleFileDelete}
           fileInputRef={fileInputRef}
           error={uploadError}
           setError={setUploadError}
